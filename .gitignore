@@ -1,0 +1,12 @@
+data/
+tv_intraday/
+ichimoku/
+*.html
+fundamentals.json
+micro.json
+scored_tech.json
+run_snapshot.json
+refresh.log
+DONE
+__pycache__/
+*.pyc

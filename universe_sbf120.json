@@ -1,0 +1,1146 @@
+{
+ "resolved_at": "2026-06-29",
+ "composition_source": "SBF 120 = CAC 40 (Euronext 31/03/2026) + valeurs additionnelles ; membership A->O verifiee EasyBourse 27/06/2026 ; tail P->Z completee par connaissance et validee par le pull Yahoo. SBF 120 revise annuellement (conseil scientifique Euronext).",
+ "poids": {
+  "technique": 40,
+  "sentiment": 30,
+  "macro": 30
+ },
+ "stocks": [
+  {
+   "id": "TTE.PA",
+   "name": "TotalEnergies",
+   "mnemo": "TTE",
+   "isin": "FR0000120271",
+   "sector": "Energie",
+   "weight": 9.52,
+   "source": "yahoo",
+   "macsec": "Energie",
+   "cac40": true
+  },
+  {
+   "id": "SU.PA",
+   "name": "Schneider Electric",
+   "mnemo": "SU",
+   "isin": "FR0000121972",
+   "sector": "Industrie & Defense",
+   "weight": 7.57,
+   "source": "yahoo",
+   "macsec": "Electrification & Industrie",
+   "cac40": true
+  },
+  {
+   "id": "MC.PA",
+   "name": "LVMH",
+   "mnemo": "MC",
+   "isin": "FR0000121014",
+   "sector": "Luxe",
+   "weight": 6.63,
+   "source": "yahoo",
+   "macsec": "Luxe",
+   "cac40": true
+  },
+  {
+   "id": "AI.PA",
+   "name": "Air Liquide",
+   "mnemo": "AI",
+   "isin": "FR0000120073",
+   "sector": "Materiaux",
+   "weight": 5.9,
+   "source": "yahoo",
+   "macsec": "Materiaux",
+   "cac40": true
+  },
+  {
+   "id": "SAN.PA",
+   "name": "Sanofi",
+   "mnemo": "SAN",
+   "isin": "FR0000120578",
+   "sector": "Sante",
+   "weight": 5.53,
+   "source": "yahoo",
+   "macsec": "Sante",
+   "cac40": true
+  },
+  {
+   "id": "AIR.PA",
+   "name": "Airbus",
+   "mnemo": "AIR",
+   "isin": "NL0000235190",
+   "sector": "Industrie & Defense",
+   "weight": 5.47,
+   "source": "yahoo",
+   "macsec": "Defense & Aero",
+   "cac40": true
+  },
+  {
+   "id": "SAF.PA",
+   "name": "Safran",
+   "mnemo": "SAF",
+   "isin": "FR0000073272",
+   "sector": "Industrie & Defense",
+   "weight": 5.09,
+   "source": "yahoo",
+   "macsec": "Defense & Aero",
+   "cac40": true
+  },
+  {
+   "id": "BNP.PA",
+   "name": "BNP Paribas",
+   "mnemo": "BNP",
+   "isin": "FR0000131104",
+   "sector": "Finance",
+   "weight": 4.98,
+   "source": "yahoo",
+   "macsec": "Banques & Assurance",
+   "cac40": true
+  },
+  {
+   "id": "OR.PA",
+   "name": "L'Oreal",
+   "mnemo": "OR",
+   "isin": "FR0000120321",
+   "sector": "Luxe",
+   "weight": 4.8,
+   "source": "yahoo",
+   "macsec": "Luxe",
+   "cac40": true
+  },
+  {
+   "id": "CS.PA",
+   "name": "AXA",
+   "mnemo": "CS",
+   "isin": "FR0000120628",
+   "sector": "Finance",
+   "weight": 4.14,
+   "source": "yahoo",
+   "macsec": "Banques & Assurance",
+   "cac40": true
+  },
+  {
+   "id": "DG.PA",
+   "name": "Vinci",
+   "mnemo": "DG",
+   "isin": "FR0000125486",
+   "sector": "Industrie & Defense",
+   "weight": 3.86,
+   "source": "yahoo",
+   "macsec": "Construction & Infra",
+   "cac40": true
+  },
+  {
+   "id": "EL.PA",
+   "name": "EssilorLuxottica",
+   "mnemo": "EL",
+   "isin": "FR0000121667",
+   "sector": "Sante",
+   "weight": 3.69,
+   "source": "yahoo",
+   "macsec": "Sante",
+   "cac40": true
+  },
+  {
+   "id": "RMS.PA",
+   "name": "Hermes International",
+   "mnemo": "RMS",
+   "isin": "FR0000052292",
+   "sector": "Luxe",
+   "weight": 2.92,
+   "source": "yahoo",
+   "macsec": "Luxe",
+   "cac40": true
+  },
+  {
+   "id": "ENGI.PA",
+   "name": "Engie",
+   "mnemo": "ENGI",
+   "isin": "FR0010208488",
+   "sector": "Utilities",
+   "weight": 2.9,
+   "source": "yahoo",
+   "macsec": "Utilities",
+   "cac40": true
+  },
+  {
+   "id": "BN.PA",
+   "name": "Danone",
+   "mnemo": "BN",
+   "isin": "FR0000120644",
+   "sector": "Conso de base",
+   "weight": 2.56,
+   "source": "yahoo",
+   "macsec": "Conso de base",
+   "cac40": true
+  },
+  {
+   "id": "GLE.PA",
+   "name": "Societe Generale",
+   "mnemo": "GLE",
+   "isin": "FR0000130809",
+   "sector": "Finance",
+   "weight": 2.5,
+   "source": "yahoo",
+   "macsec": "Banques & Assurance",
+   "cac40": true
+  },
+  {
+   "id": "LR.PA",
+   "name": "Legrand",
+   "mnemo": "LR",
+   "isin": "FR0010307819",
+   "sector": "Industrie & Defense",
+   "weight": 1.98,
+   "source": "yahoo",
+   "macsec": "Electrification & Industrie",
+   "cac40": true
+  },
+  {
+   "id": "SGO.PA",
+   "name": "Saint-Gobain",
+   "mnemo": "SGO",
+   "isin": "FR0000125007",
+   "sector": "Industrie & Defense",
+   "weight": 1.8,
+   "source": "yahoo",
+   "macsec": "Construction & Infra",
+   "cac40": true
+  },
+  {
+   "id": "ORA.PA",
+   "name": "Orange",
+   "mnemo": "ORA",
+   "isin": "FR0000133308",
+   "sector": "Telecoms",
+   "weight": 1.75,
+   "source": "yahoo",
+   "macsec": "Telecoms",
+   "cac40": true
+  },
+  {
+   "id": "HO.PA",
+   "name": "Thales",
+   "mnemo": "HO",
+   "isin": "FR0000121329",
+   "sector": "Industrie & Defense",
+   "weight": 1.34,
+   "source": "yahoo",
+   "macsec": "Defense & Aero",
+   "cac40": true
+  },
+  {
+   "id": "VIE.PA",
+   "name": "Veolia Environnement",
+   "mnemo": "VIE",
+   "isin": "FR0000124141",
+   "sector": "Utilities",
+   "weight": 1.25,
+   "source": "yahoo",
+   "macsec": "Utilities",
+   "cac40": true
+  },
+  {
+   "id": "ML.PA",
+   "name": "Michelin",
+   "mnemo": "ML",
+   "isin": "FR0000121261",
+   "sector": "Automobile",
+   "weight": 1.18,
+   "source": "yahoo",
+   "macsec": "Automobile",
+   "cac40": true
+  },
+  {
+   "id": "KER.PA",
+   "name": "Kering",
+   "mnemo": "KER",
+   "isin": "FR0000121485",
+   "sector": "Luxe",
+   "weight": 1.09,
+   "source": "yahoo",
+   "macsec": "Luxe",
+   "cac40": true
+  },
+  {
+   "id": "MT.PA",
+   "name": "ArcelorMittal",
+   "mnemo": "MT",
+   "isin": "LU1598757687",
+   "sector": "Materiaux",
+   "weight": 1.07,
+   "source": "yahoo",
+   "macsec": "Materiaux",
+   "cac40": true
+  },
+  {
+   "id": "STMPA.PA",
+   "name": "STMicroelectronics",
+   "mnemo": "STMPA",
+   "isin": "NL0000226223",
+   "sector": "Technologie",
+   "weight": 1.05,
+   "source": "yahoo",
+   "fallback": "STM.PA",
+   "macsec": "Technologie",
+   "cac40": true
+  },
+  {
+   "id": "PUB.PA",
+   "name": "Publicis Groupe",
+   "mnemo": "PUB",
+   "isin": "FR0000130577",
+   "sector": "Conso discretionnaire",
+   "weight": 1.01,
+   "source": "yahoo",
+   "macsec": "Conso discretionnaire & Services",
+   "cac40": true
+  },
+  {
+   "id": "CAP.PA",
+   "name": "Capgemini",
+   "mnemo": "CAP",
+   "isin": "FR0000125338",
+   "sector": "Technologie",
+   "weight": 0.88,
+   "source": "yahoo",
+   "macsec": "Technologie",
+   "cac40": true
+  },
+  {
+   "id": "ACA.PA",
+   "name": "Credit Agricole",
+   "mnemo": "ACA",
+   "isin": "FR0000045072",
+   "sector": "Finance",
+   "weight": 0.84,
+   "source": "yahoo",
+   "macsec": "Banques & Assurance",
+   "cac40": true
+  },
+  {
+   "id": "RI.PA",
+   "name": "Pernod Ricard",
+   "mnemo": "RI",
+   "isin": "FR0000120693",
+   "sector": "Conso de base",
+   "weight": 0.78,
+   "source": "yahoo",
+   "macsec": "Conso de base",
+   "cac40": true
+  },
+  {
+   "id": "DSY.PA",
+   "name": "Dassault Systemes",
+   "mnemo": "DSY",
+   "isin": "FR0014003TT8",
+   "sector": "Technologie",
+   "weight": 0.69,
+   "source": "yahoo",
+   "macsec": "Technologie",
+   "cac40": true
+  },
+  {
+   "id": "STLAP.PA",
+   "name": "Stellantis",
+   "mnemo": "STLAP",
+   "isin": "NL00150001Q9",
+   "sector": "Automobile",
+   "weight": 0.68,
+   "source": "yahoo",
+   "fallback": "STLA.PA",
+   "macsec": "Automobile",
+   "cac40": true
+  },
+  {
+   "id": "URW.PA",
+   "name": "Unibail-Rodamco-Westfield",
+   "mnemo": "URW",
+   "isin": "FR0013326246",
+   "sector": "Immobilier",
+   "weight": 0.65,
+   "source": "yahoo",
+   "macsec": "Immobilier",
+   "cac40": true
+  },
+  {
+   "id": "CA.PA",
+   "name": "Carrefour",
+   "mnemo": "CA",
+   "isin": "FR0000120172",
+   "sector": "Conso de base",
+   "weight": 0.61,
+   "source": "yahoo",
+   "macsec": "Conso de base",
+   "cac40": true
+  },
+  {
+   "id": "ENX.PA",
+   "name": "Euronext",
+   "mnemo": "ENX",
+   "isin": "NL0006294274",
+   "sector": "Finance",
+   "weight": 0.59,
+   "source": "yahoo",
+   "macsec": "Banques & Assurance",
+   "cac40": true
+  },
+  {
+   "id": "FGR.PA",
+   "name": "Eiffage",
+   "mnemo": "FGR",
+   "isin": "FR0000130452",
+   "sector": "Industrie & Defense",
+   "weight": 0.56,
+   "source": "yahoo",
+   "macsec": "Construction & Infra",
+   "cac40": true
+  },
+  {
+   "id": "BVI.PA",
+   "name": "Bureau Veritas",
+   "mnemo": "BVI",
+   "isin": "FR0006174348",
+   "sector": "Industrie & Defense",
+   "weight": 0.54,
+   "source": "yahoo",
+   "macsec": "Construction & Infra",
+   "cac40": true
+  },
+  {
+   "id": "EN.PA",
+   "name": "Bouygues",
+   "mnemo": "EN",
+   "isin": "FR0000120503",
+   "sector": "Industrie & Defense",
+   "weight": 0.53,
+   "source": "yahoo",
+   "macsec": "Construction & Infra",
+   "cac40": true
+  },
+  {
+   "id": "AC.PA",
+   "name": "Accor",
+   "mnemo": "AC",
+   "isin": "FR0000120404",
+   "sector": "Conso discretionnaire",
+   "weight": 0.43,
+   "source": "yahoo",
+   "macsec": "Conso discretionnaire & Services",
+   "cac40": true
+  },
+  {
+   "id": "ERF.PA",
+   "name": "Eurofins Scientific",
+   "mnemo": "ERF",
+   "isin": "FR0014000MR3",
+   "sector": "Sante",
+   "weight": 0.41,
+   "source": "yahoo",
+   "macsec": "Sante",
+   "cac40": true
+  },
+  {
+   "id": "RNO.PA",
+   "name": "Renault",
+   "mnemo": "RNO",
+   "isin": "FR0000131906",
+   "sector": "Automobile",
+   "weight": 0.31,
+   "source": "yahoo",
+   "macsec": "Automobile",
+   "cac40": true
+  },
+  {
+   "id": "ABVX.PA",
+   "name": "Abivax",
+   "mnemo": "ABVX",
+   "sector": "Sante",
+   "macsec": "Sante",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "ADP.PA",
+   "name": "Aeroports de Paris (ADP)",
+   "mnemo": "ADP",
+   "sector": "Construction & Infra",
+   "macsec": "Construction & Infra",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "AF.PA",
+   "name": "Air France-KLM",
+   "mnemo": "AF",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "ALO.PA",
+   "name": "Alstom",
+   "mnemo": "ALO",
+   "sector": "Construction & Infra",
+   "macsec": "Construction & Infra",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "ATE.PA",
+   "name": "Alten",
+   "mnemo": "ATE",
+   "sector": "Technologie",
+   "macsec": "Technologie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "AMUN.PA",
+   "name": "Amundi",
+   "mnemo": "AMUN",
+   "sector": "Banques & Assurance",
+   "macsec": "Banques & Assurance",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "APAM.AS",
+   "name": "Aperam",
+   "mnemo": "APAM",
+   "sector": "Materiaux",
+   "macsec": "Materiaux",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "ARG.PA",
+   "name": "Argan",
+   "mnemo": "ARG",
+   "sector": "Immobilier",
+   "macsec": "Immobilier",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "AKE.PA",
+   "name": "Arkema",
+   "mnemo": "AKE",
+   "sector": "Materiaux",
+   "macsec": "Materiaux",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "ATO.PA",
+   "name": "Atos",
+   "mnemo": "ATO",
+   "sector": "Technologie",
+   "macsec": "Technologie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "AYV.PA",
+   "name": "Ayvens",
+   "mnemo": "AYV",
+   "sector": "Banques & Assurance",
+   "macsec": "Banques & Assurance",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "BB.PA",
+   "name": "Bic",
+   "mnemo": "BB",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "BIM.PA",
+   "name": "bioMerieux",
+   "mnemo": "BIM",
+   "sector": "Sante",
+   "macsec": "Sante",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "BOL.PA",
+   "name": "Bollore",
+   "mnemo": "BOL",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "CARM.PA",
+   "name": "Carmila",
+   "mnemo": "CARM",
+   "sector": "Immobilier",
+   "macsec": "Immobilier",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "CLARI.PA",
+   "name": "Clariane",
+   "mnemo": "CLARI",
+   "sector": "Sante",
+   "macsec": "Sante",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "COFA.PA",
+   "name": "Coface",
+   "mnemo": "COFA",
+   "sector": "Banques & Assurance",
+   "macsec": "Banques & Assurance",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "COV.PA",
+   "name": "Covivio",
+   "mnemo": "COV",
+   "sector": "Immobilier",
+   "macsec": "Immobilier",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "AM.PA",
+   "name": "Dassault Aviation",
+   "mnemo": "AM",
+   "sector": "Defense & Aero",
+   "macsec": "Defense & Aero",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "DBV.PA",
+   "name": "DBV Technologies",
+   "mnemo": "DBV",
+   "sector": "Sante",
+   "macsec": "Sante",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "DBG.PA",
+   "name": "Derichebourg",
+   "mnemo": "DBG",
+   "sector": "Construction & Infra",
+   "macsec": "Construction & Infra",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "EDEN.PA",
+   "name": "Edenred",
+   "mnemo": "EDEN",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "ELIS.PA",
+   "name": "Elis",
+   "mnemo": "ELIS",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "EMEIS.PA",
+   "name": "Emeis (ex-Orpea)",
+   "mnemo": "EMEIS",
+   "sector": "Sante",
+   "macsec": "Sante",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "ERA.PA",
+   "name": "Eramet",
+   "mnemo": "ERA",
+   "sector": "Materiaux",
+   "macsec": "Materiaux",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "RF.PA",
+   "name": "Eurazeo",
+   "mnemo": "RF",
+   "sector": "Banques & Assurance",
+   "macsec": "Banques & Assurance",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "ETL.PA",
+   "name": "Eutelsat",
+   "mnemo": "ETL",
+   "sector": "Telecoms",
+   "macsec": "Telecoms",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "EXA.PA",
+   "name": "Exail Technologies",
+   "mnemo": "EXA",
+   "sector": "Defense & Aero",
+   "macsec": "Defense & Aero",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "EXENS.PA",
+   "name": "Exosens",
+   "mnemo": "EXENS",
+   "sector": "Defense & Aero",
+   "macsec": "Defense & Aero",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "FRVIA.PA",
+   "name": "Forvia",
+   "mnemo": "FRVIA",
+   "sector": "Automobile",
+   "macsec": "Automobile",
+   "source": "yahoo",
+   "cac40": false,
+   "fallback": "EO.PA"
+  },
+  {
+   "id": "GTT.PA",
+   "name": "GTT (Gaztransport & Technigaz)",
+   "mnemo": "GTT",
+   "sector": "Electrification & Industrie",
+   "macsec": "Electrification & Industrie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "GFC.PA",
+   "name": "Gecina",
+   "mnemo": "GFC",
+   "sector": "Immobilier",
+   "macsec": "Immobilier",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "GET.PA",
+   "name": "Getlink",
+   "mnemo": "GET",
+   "sector": "Construction & Infra",
+   "macsec": "Construction & Infra",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "ICAD.PA",
+   "name": "Icade",
+   "mnemo": "ICAD",
+   "sector": "Immobilier",
+   "macsec": "Immobilier",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "IDL.PA",
+   "name": "ID Logistics",
+   "mnemo": "IDL",
+   "sector": "Construction & Infra",
+   "macsec": "Construction & Infra",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "NK.PA",
+   "name": "Imerys",
+   "mnemo": "NK",
+   "sector": "Materiaux",
+   "macsec": "Materiaux",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "ITP.PA",
+   "name": "Interparfums",
+   "mnemo": "ITP",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "IPN.PA",
+   "name": "Ipsen",
+   "mnemo": "IPN",
+   "sector": "Sante",
+   "macsec": "Sante",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "IPS.PA",
+   "name": "Ipsos",
+   "mnemo": "IPS",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "DEC.PA",
+   "name": "JCDecaux",
+   "mnemo": "DEC",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "LI.PA",
+   "name": "Klepierre",
+   "mnemo": "LI",
+   "sector": "Immobilier",
+   "macsec": "Immobilier",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "FDJ.PA",
+   "name": "FDJ United",
+   "mnemo": "FDJ",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "FII.PA",
+   "name": "LISI",
+   "mnemo": "FII",
+   "sector": "Defense & Aero",
+   "macsec": "Defense & Aero",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "MMT.PA",
+   "name": "M6 Metropole TV",
+   "mnemo": "MMT",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "MAU.PA",
+   "name": "Maurel & Prom",
+   "mnemo": "MAU",
+   "sector": "Energie",
+   "macsec": "Energie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "MEDCL.PA",
+   "name": "Medincell",
+   "mnemo": "MEDCL",
+   "sector": "Sante",
+   "macsec": "Sante",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "MERY.PA",
+   "name": "Mercialys",
+   "mnemo": "MERY",
+   "sector": "Immobilier",
+   "macsec": "Immobilier",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "MRN.PA",
+   "name": "Mersen",
+   "mnemo": "MRN",
+   "sector": "Electrification & Industrie",
+   "macsec": "Electrification & Industrie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "NANO.PA",
+   "name": "Nanobiotix",
+   "mnemo": "NANO",
+   "sector": "Sante",
+   "macsec": "Sante",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "NEX.PA",
+   "name": "Nexans",
+   "mnemo": "NEX",
+   "sector": "Electrification & Industrie",
+   "macsec": "Electrification & Industrie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "OPM.PA",
+   "name": "OPmobility (ex-Plastic Omnium)",
+   "mnemo": "OPM",
+   "sector": "Automobile",
+   "macsec": "Automobile",
+   "source": "yahoo",
+   "cac40": false,
+   "fallback": "POM.PA"
+  },
+  {
+   "id": "RCO.PA",
+   "name": "Remy Cointreau",
+   "mnemo": "RCO",
+   "sector": "Conso de base",
+   "macsec": "Conso de base",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "RXL.PA",
+   "name": "Rexel",
+   "mnemo": "RXL",
+   "sector": "Electrification & Industrie",
+   "macsec": "Electrification & Industrie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "RUI.PA",
+   "name": "Rubis",
+   "mnemo": "RUI",
+   "sector": "Energie",
+   "macsec": "Energie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "DIM.PA",
+   "name": "Sartorius Stedim Biotech",
+   "mnemo": "DIM",
+   "sector": "Sante",
+   "macsec": "Sante",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "SCR.PA",
+   "name": "SCOR",
+   "mnemo": "SCR",
+   "sector": "Banques & Assurance",
+   "macsec": "Banques & Assurance",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "SK.PA",
+   "name": "SEB",
+   "mnemo": "SK",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "SOI.PA",
+   "name": "Soitec",
+   "mnemo": "SOI",
+   "sector": "Technologie",
+   "macsec": "Technologie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "SOP.PA",
+   "name": "Sopra Steria",
+   "mnemo": "SOP",
+   "sector": "Technologie",
+   "macsec": "Technologie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "SPIE.PA",
+   "name": "SPIE",
+   "mnemo": "SPIE",
+   "sector": "Electrification & Industrie",
+   "macsec": "Electrification & Industrie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "SW.PA",
+   "name": "Sodexo",
+   "mnemo": "SW",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "TE.PA",
+   "name": "Technip Energies",
+   "mnemo": "TE",
+   "sector": "Energie",
+   "macsec": "Energie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "TEP.PA",
+   "name": "Teleperformance",
+   "mnemo": "TEP",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "TRI.PA",
+   "name": "Trigano",
+   "mnemo": "TRI",
+   "sector": "Conso discretionnaire & Services",
+   "macsec": "Conso discretionnaire & Services",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "UBI.PA",
+   "name": "Ubisoft",
+   "mnemo": "UBI",
+   "sector": "Technologie",
+   "macsec": "Technologie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "FR.PA",
+   "name": "Valeo",
+   "mnemo": "FR",
+   "sector": "Automobile",
+   "macsec": "Automobile",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "VK.PA",
+   "name": "Vallourec",
+   "mnemo": "VK",
+   "sector": "Energie",
+   "macsec": "Energie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "VRLA.PA",
+   "name": "Verallia",
+   "mnemo": "VRLA",
+   "sector": "Materiaux",
+   "macsec": "Materiaux",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "VIRP.PA",
+   "name": "Virbac",
+   "mnemo": "VIRP",
+   "sector": "Sante",
+   "macsec": "Sante",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "VU.PA",
+   "name": "Vusiongroup",
+   "mnemo": "VU",
+   "sector": "Technologie",
+   "macsec": "Technologie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "MF.PA",
+   "name": "Wendel",
+   "mnemo": "MF",
+   "sector": "Banques & Assurance",
+   "macsec": "Banques & Assurance",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "WLN.PA",
+   "name": "Worldline",
+   "mnemo": "WLN",
+   "sector": "Technologie",
+   "macsec": "Technologie",
+   "source": "yahoo",
+   "cac40": false
+  },
+  {
+   "id": "S30.PA",
+   "name": "Solutions30",
+   "mnemo": "S30",
+   "sector": "Technologie",
+   "macsec": "Technologie",
+   "source": "yahoo",
+   "cac40": false
+  }
+ ],
+ "crypto": [
+  {
+   "id": "BTC",
+   "name": "Bitcoin",
+   "yahoo": "BTC-USD",
+   "cg_id": "bitcoin",
+   "sector": "Crypto",
+   "source": "yahoo"
+  },
+  {
+   "id": "ETH",
+   "name": "Ethereum",
+   "yahoo": "ETH-USD",
+   "cg_id": "ethereum",
+   "sector": "Crypto",
+   "source": "yahoo"
+  },
+  {
+   "id": "SOL",
+   "name": "Solana",
+   "yahoo": "SOL-USD",
+   "cg_id": "solana",
+   "sector": "Crypto",
+   "source": "yahoo"
+  },
+  {
+   "id": "HYPE",
+   "name": "Hyperliquid",
+   "yahoo": null,
+   "cg_id": "hyperliquid",
+   "sector": "Crypto",
+   "source": "coingecko"
+  }
+ ]
+}
