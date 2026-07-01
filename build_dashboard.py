@@ -13,6 +13,25 @@ W = {"tech": 50, "sent": 15, "macro": 15, "micro": 20}
 
 tech = json.load(open(os.path.join(BASE, "scored_tech.json")))
 MICRO = json.load(open(os.path.join(BASE, "micro.json"))) if os.path.exists(os.path.join(BASE, "micro.json")) else {}
+
+# --- Contexte dynamique (sentiment/macro rafraichis par LLM, optionnel) ---
+import copy as _copy
+DYN = {}
+_dp = os.path.join(BASE, "dynamic_context.json")
+if os.path.exists(_dp):
+    try:
+        DYN = json.load(open(_dp))
+    except Exception:
+        DYN = {}
+DYN_ON = bool(DYN.get("sentiment") or DYN.get("macro_today") or DYN.get("macro_sectors"))
+DYN_DATE = DYN.get("generated_at", "")
+MACRO_TODAY_USED = dict(A.MACRO_TODAY); MACRO_TODAY_USED.update(DYN.get("macro_today") or {})
+MACRO_SECTORS_USED = _copy.deepcopy(A.MACRO_SECTORS)
+for _s, _v in (DYN.get("macro_sectors") or {}).items():
+    if _s in MACRO_SECTORS_USED and isinstance(_v, dict):
+        if isinstance(_v.get("score"), (int, float)): MACRO_SECTORS_USED[_s]["score"] = int(_v["score"])
+        if _v.get("rat"): MACRO_SECTORS_USED[_s]["rat"] = _v["rat"]
+SENT_DYN = DYN.get("sentiment") or {}
 uni = json.load(open(os.path.join(BASE, "universe_sbf120.json")))
 NAME = {}; MACSEC = {}
 for s in uni["stocks"]:
@@ -57,11 +76,11 @@ def make_chart(aid):
     delta = close.diff(); gain = delta.clip(lower=0); loss = -delta.clip(upper=0)
     rsi = 100 - 100/(1 + wilder(gain,14)/wilder(loss,14))
     n = min(252, len(close)); sl = slice(len(close)-n, len(close))
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(5.0, 3.1), height_ratios=[3,1], sharex=True)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(7.2, 4.4), height_ratios=[3,1], sharex=True)
     fig.patch.set_facecolor("#0f1320")
     for ax in (ax1, ax2):
         ax.set_facecolor("#161b2e")
-        ax.tick_params(colors="#8b93ad", labelsize=6.5)
+        ax.tick_params(colors="#8b93ad", labelsize=8)
         for sp in ax.spines.values(): sp.set_color("#2a2f45")
         ax.grid(True, color="#222840", lw=0.5)
     ax1.plot(dates[sl], close[sl], color="#e8ebf5", lw=1.2, label="Cours")
@@ -75,13 +94,13 @@ def make_chart(aid):
         ax1.fill_between(x, a, b, where=(a < b), color="#d9534f", alpha=0.18, linewidth=0)
         ax1.plot(x, ich_kijun[sl], color="#f5d442", lw=0.8, label="Kijun")
     cur = d["currency"]
-    ax1.set_title("%s  (%s)" % (d["name"], aid), color="#e8ebf5", fontsize=8, loc="left")
-    ax1.legend(fontsize=5.5, facecolor="#161b2e", edgecolor="#2a2f45", labelcolor="#cfd4e6", ncol=4, loc="upper left")
+    ax1.set_title("%s  (%s)" % (d["name"], aid), color="#e8ebf5", fontsize=11, loc="left")
+    ax1.legend(fontsize=8, facecolor="#161b2e", edgecolor="#2a2f45", labelcolor="#cfd4e6", ncol=6, loc="upper left")
     ax2.plot(dates[sl], rsi[sl], color="#7c5cff", lw=0.9)
     ax2.axhline(70, color="#d9534f", lw=0.5, ls="--"); ax2.axhline(30, color="#3aa76d", lw=0.5, ls="--")
-    ax2.set_ylim(0, 100); ax2.set_ylabel("RSI", color="#8b93ad", fontsize=6.5)
+    ax2.set_ylim(0, 100); ax2.set_ylabel("RSI", color="#8b93ad", fontsize=9)
     fig.tight_layout(pad=0.4)
-    buf = io.BytesIO(); fig.savefig(buf, format="png", dpi=115, facecolor=fig.get_facecolor()); plt.close(fig)
+    buf = io.BytesIO(); fig.savefig(buf, format="png", dpi=150, facecolor=fig.get_facecolor()); plt.close(fig)
     return base64.b64encode(buf.getvalue()).decode()
 
 # ---- Build per-asset records ----
@@ -91,12 +110,15 @@ for aid, t in tech.items():
     if t.get("status") != "ok":
         unavailable.append((aid, t.get("name"), t.get("cause"))); continue
     macsec = MACSEC.get(aid) or A.ASSET_MACRO_SECTOR.get(aid)
-    if aid in A.SENTIMENT:
+    if aid in SENT_DYN and isinstance(SENT_DYN[aid], dict) and isinstance(SENT_DYN[aid].get("score"), (int, float)):
+        sent = dict(SENT_DYN[aid]); sent["sourced"] = True; sent["dynamic"] = True
+        sent.setdefault("points", [])
+    elif aid in A.SENTIMENT:
         sent = A.SENTIMENT[aid]
     else:
         sent = {"score": A.SECTOR_SENT_DEFAULT[macsec], "sourced": False,
                 "basis": "Proxy sectoriel — %s" % macsec}
-    mac = A.MACRO_SECTORS[macsec]
+    mac = MACRO_SECTORS_USED[macsec]
     ts, ss, ms = t["tech_score"], sent["score"], mac["score"]
     mrec = MICRO.get(aid, {}); mic = mrec.get("micro")
     parts = [("tech", ts, W["tech"]), ("sent", ss, W["sent"]), ("macro", ms, W["macro"])]
@@ -166,7 +188,12 @@ td.r,th.r{text-align:right} .sc{font-weight:700;border-radius:5px;text-align:cen
 .dot{font-size:10px} .src{color:#3ed598} .px{color:var(--mut)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
 .chartcard{background:var(--panel);border:1px solid var(--bd);border-radius:10px;padding:8px}
-.chartcard img{width:100%;display:block;border-radius:6px}
+.chartcard img{width:100%;display:block;border-radius:6px;cursor:zoom-in}
+#lb{position:fixed;inset:0;background:rgba(6,8,16,.94);display:none;align-items:center;justify-content:center;z-index:2000;padding:2vh}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:88vh;border-radius:8px;box-shadow:0 12px 50px #000;cursor:zoom-out}
+#lb .cap{position:fixed;top:10px;left:0;right:0;text-align:center;color:#cfd4e6;font-size:13px;pointer-events:none}
+#lb .x{position:fixed;top:6px;right:18px;color:#cfd4e6;font-size:26px;cursor:pointer;line-height:1}
 .chmeta{display:flex;justify-content:space-between;font-size:11.5px;padding:6px 4px 2px;color:var(--mut)}
 .hm{display:grid;grid-template-columns:170px repeat(5,1fr);gap:2px;font-size:11.5px}
 .hm .h{color:var(--mut);font-size:10.5px;text-transform:uppercase;padding:4px}
@@ -196,7 +223,10 @@ P.append('<div class="banner"><b>Agrégation de signaux publics à fin d\'inform
 # Exec summary
 strongest_div = sorted([r for r in rows if r["div"]], key=lambda r:-r["spread"])[:4]
 P.append('<div class="card"><h3 style="margin-top:0">Synthèse du run</h3>')
-P.append('<div class="small">Régime macro dominant : <b style="color:#ffd9a8">taux en hausse</b> (BCE +25 pb le 11/06, dépôt 2,25 % ; Fed maintenue mais biais haussier), <b style="color:#ffd9a8">inflation collante</b> (zone euro 3,2 %), <b style="color:#ffd9a8">choc énergétique géopolitique</b> (Moyen-Orient, Brent ~80 $). Favorise banques, énergie, défense ; pénalise immobilier, autos, utilities, crypto.</div>')
+if DYN.get("regime_summary"):
+    P.append('<div class="small">Régime macro dominant : %s</div>' % esc(DYN["regime_summary"]))
+else:
+    P.append('<div class="small">Régime macro dominant : <b style="color:#ffd9a8">taux en hausse</b> (BCE +25 pb le 11/06, dépôt 2,25 % ; Fed maintenue mais biais haussier), <b style="color:#ffd9a8">inflation collante</b> (zone euro 3,2 %), <b style="color:#ffd9a8">choc énergétique géopolitique</b> (Moyen-Orient, Brent ~80 $). Favorise banques, énergie, défense ; pénalise immobilier, autos, utilities, crypto.</div>')
 P.append('<div class="kpis">')
 P.append('<div class="kpi"><div class="n">%d/%d</div><div class="l">actifs couverts (0 indisponible)</div></div>' % (len(rows), len(rows)+len(unavailable)))
 P.append('<div class="kpi"><div class="n">%d</div><div class="l">flags divergence inter-blocs &gt;30 pts</div></div>' % ndiv)
@@ -327,7 +357,7 @@ for r in rows:
     if not s["sourced"]: continue
     P.append('<div class="card"><h3 style="margin-top:0">%s <span class="tag">%s</span> <span class="tag">sentiment %d</span></h3>' % (esc(r["name"]), esc(s.get("label","")), s["score"]))
     if s.get("consensus"): P.append('<div class="small">Consensus : %s</div>' % esc(s["consensus"]))
-    for pt in s["points"]:
+    for pt in s.get("points", []):
         P.append('<div class="pt">%s<br><span class="m">— <a href="%s" target="_blank" rel="noopener">%s</a>, %s</span></div>'
                  % (esc(pt["t"]), esc(pt["url"]), esc(pt["media"]), esc(pt["date"])))
     P.append('</div>')
@@ -340,12 +370,14 @@ for r in sorted([x for x in rows if not x["sent_rec"]["sourced"]], key=lambda x:
 P.append('</tbody></table></div>')
 
 # Macro
-P.append('<h2>Macro du jour</h2><div class="card">')
+_fresh = ('<span class="tag" style="background:#12331f;border-color:#1f6b46;color:#8ef0b8">Rafraîchi par LLM le %s</span>' % esc(DYN_DATE)) if DYN_ON else '<span class="tag">Curation figée (non rafraîchie ce run)</span>'
+P.append('<h2>Macro du jour %s</h2><div class="card">' % _fresh)
 for k in ("bce","fed","infla","cycle","agenda"):
-    P.append('<div class="pt">%s</div>' % esc(A.MACRO_TODAY[k]))
+    if MACRO_TODAY_USED.get(k):
+        P.append('<div class="pt">%s</div>' % esc(MACRO_TODAY_USED[k]))
 P.append('</div>')
 P.append('<h3>Score macro par secteur (appliqué par héritage sectoriel)</h3><div class="card"><table><thead><tr><th>Secteur macro</th><th class="r">Score</th><th>Logique (régime courant)</th></tr></thead><tbody>')
-for sec, v in sorted(A.MACRO_SECTORS.items(), key=lambda kv:-kv[1]["score"]):
+for sec, v in sorted(MACRO_SECTORS_USED.items(), key=lambda kv:-kv[1]["score"]):
     bg, tx = grad(v["score"])
     P.append('<tr><td><b>%s</b></td><td class="r"><span class="sc" style="background:%s;color:%s">%d</span></td><td class="mut">%s</td></tr>' % (esc(sec), bg, tx, v["score"], esc(v["rat"])))
 P.append('</tbody></table></div>')
@@ -431,7 +463,10 @@ P.append('<h3>Limites connues (à vérifier)</h3><div class="small">'
 P.append('<div class="small" style="margin-top:10px">Généré le <b>%s</b> · Veille Marché FR (agrégateur de signaux, non-conseil).</div>' % esc(run_str))
 P.append('</div>')
 
-P.append('</div></body></html>')
+P.append('</div>')
+P.append('<div id="lb"><span class="x">&#10005;</span><div class="cap"></div><img alt=""></div>')
+P.append('<script>(function(){var lb=document.getElementById("lb"),im=lb.querySelector("img"),cap=lb.querySelector(".cap");document.querySelectorAll(".chartcard img").forEach(function(g){g.addEventListener("click",function(){im.src=g.src;cap.textContent=g.alt||"";lb.classList.add("on");});});function c(){lb.classList.remove("on");im.removeAttribute("src");}lb.addEventListener("click",function(){c();});document.addEventListener("keydown",function(e){if(e.key==="Escape")c();});})();</script>')
+P.append('</body></html>')
 
 out_path = os.path.join(BASE, fname)
 open(out_path, "w", encoding="utf-8").write("".join(P))
