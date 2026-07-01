@@ -5,6 +5,8 @@ import json, os, time, datetime
 import tv_client, ichimoku
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(BASE, "data"); TVI = os.path.join(BASE, "tv_intraday"); ICH = os.path.join(BASE, "ichimoku")
+for _d in (DATA, TVI, ICH):
+    os.makedirs(_d, exist_ok=True)
 
 CRYPTO = [("BTC", "Bitcoin", "BTCEUR"), ("ETH", "Ethereum", "ETHEUR"),
           ("SOL", "Solana", "SOLEUR"), ("HYPE", "Hyperliquid", "HYPEEUR")]

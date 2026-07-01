@@ -5,7 +5,7 @@ import json, os, sys, time, datetime
 import tv_client
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(BASE, "data"); TVI = os.path.join(BASE, "tv_intraday")
-os.makedirs(TVI, exist_ok=True)
+os.makedirs(DATA, exist_ok=True); os.makedirs(TVI, exist_ok=True)
 U = json.load(open(os.path.join(BASE, "universe_sbf120.json")))
 STOCKS = U["stocks"]
 

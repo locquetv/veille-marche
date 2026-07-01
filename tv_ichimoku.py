@@ -5,6 +5,7 @@ import json, os
 import ichimoku
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(BASE, "data"); TVI = os.path.join(BASE, "tv_intraday"); ICH = os.path.join(BASE, "ichimoku")
+os.makedirs(ICH, exist_ok=True)
 U = json.load(open(os.path.join(BASE, "universe_sbf120.json")))
 
 n = 0
